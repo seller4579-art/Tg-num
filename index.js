@@ -6,10 +6,9 @@ const TG_API_KEY = "DengerxTrusted_Robotx2807";
 // ---------------- Home Route ----------------
 app.get('/', (req, res) => {
   res.json({
-    status: true,
-    message: "API is running",
-    developer: "@Boss_Hcrr",
-    routes: ["/advanced/tg2num?q=@username"]
+    status: "running ✅",
+    endpoint: "/advanced/tg2num?q=@username",
+    developer: "@Boss_Hcrr"
   });
 });
 
