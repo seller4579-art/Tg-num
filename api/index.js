@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 
 const TG_API_KEY = "DengerxTrusted_Robotx2807";
-const UPSTREAM_TG_NUM_URL = process.env.UPSTREAM_TG_NUM_URL || "https://tg-to-num-pink.vercel.app/tgnum";
 
 // ---------------- Home Route ----------------
 app.get('/', (req, res) => {
@@ -13,7 +12,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// ---------------- Telegram to Number Route (fully dynamic) ----------------
+// ---------------- Telegram to Number Route ----------------
 app.get('/advanced/tg2num', async (req, res) => {
   try {
     const { q } = req.query;
@@ -25,10 +24,9 @@ app.get('/advanced/tg2num', async (req, res) => {
       });
     }
 
-    const username = encodeURIComponent(q);
-    const upstreamUrl = `${UPSTREAM_TG_NUM_URL}?tgusername=${username}`;
-
-    const response = await fetch(upstreamUrl);
+    const response = await fetch(
+      `https://anon-tg-info.vercel.app/tg2num/user?key=${TG_API_KEY}&q=${encodeURIComponent(q)}`
+    );
 
     if (!response.ok) {
       return res.status(500).json({
