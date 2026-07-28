@@ -1,0 +1,12 @@
+{
+  "name": "tg2num-api",
+  "version": "1.0.0",
+  "description": "Telegram to number lookup API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
