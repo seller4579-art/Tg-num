@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const TG_API_KEY = "DengerxTrusted_Robotx2807";
+const TG_API_KEY = "FIGHTER";
 
 // ---------------- Home Route ----------------
 app.get('/', (req, res) => {
@@ -25,7 +25,7 @@ app.get('/advanced/tg2num', async (req, res) => {
     }
 
     const response = await fetch(
-      `https://anon-tg-info.vercel.app/tg2num/user?key=${TG_API_KEY}&q=${encodeURIComponent(q)}`
+      `https://sahilxher.madewith.me/api/tg?key=${TG_API_KEY}&number=${encodeURIComponent(q)}`
     );
 
     if (!response.ok) {
